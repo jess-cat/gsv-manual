@@ -32,6 +32,11 @@ Start with the outcome you want. Each section begins with common actions and lea
 | Set a reminder or recurring job | [Schedules and automation](pages/automation/index.md) |
 | Create, inspect, reset, or stop a piece of work | [Work controls](pages/agents-assistants/conversations-delegation.md) |
 | Read an image, transcribe audio, or create media | [Media tools](pages/files-knowledge/media.md) |
+| Search the web | [Shell, CodeMode, and network](pages/reference/shell-codemode-network.md) |
+| Change which model answers first, or how reasoning is set | [Models and approvals](pages/settings/ai-voice-approvals.md) |
+| Decide when GSV asks before acting | [Models and approvals](pages/settings/ai-voice-approvals.md) |
+| See every action GSV took and why | [The ledger](pages/agents-assistants/ledger.md) |
+| Invite another person into this space | [Passwords, sessions, and people](pages/accounts-access/credentials-sharing.md) |
 | Run shell commands, HTTP requests, or a composed workflow | [Shell, CodeMode, and network](pages/reference/shell-codemode-network.md) |
 | Diagnose a failure | [Troubleshooting](pages/reference/troubleshooting.md) |
 
@@ -58,4 +63,6 @@ The live search includes commands, connected computers, installed skills, and re
 - **Ship** is the main conversation with GSV.
 - **Work** is a task with its own activity and controls. Open it to inspect or intervene.
 - **Messages** are what was deliberately sent. **Activity** shows the reasoning, tools, retries, and errors behind the work.
-- A **target** is a place where an action can run, such as GSV itself, a connected computer, or a browser.
+- A **target** is a place where an action can run, such as GSV itself, a connected computer, or a browser. The Web app calls connected targets **Places**.
+- **Send** is how GSV replies. Text is sent only when GSV deliberately sends it; everything else stays in activity.
+- The **ledger** is the record of every action GSV took: who asked, where it ran, what it did, why, and how it ended.

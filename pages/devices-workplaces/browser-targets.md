@@ -4,6 +4,8 @@
 
 A browser target lets GSV use operations deliberately exposed by a connected browser extension or profile. It is useful for browser-local state and actions that should happen in that profile.
 
+To connect one, choose **connect** beside Places in Fleet, pick **Browser**, and pair the **Your GSV** extension with the invitation shown. See [Use the Web and Desktop surfaces](../apps-desktop/desktop-surfaces-and-apps.md).
+
 ## Find It
 
 ```bash

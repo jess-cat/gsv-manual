@@ -34,13 +34,15 @@ Use `man stt` or `man tts` for supported options. A voice message received throu
 
 ## Attach Files To A Reply
 
-During an active interaction:
+During an active interaction, stage files and then send with the Send tool, or from Shell:
 
 ```bash
 message attach report.pdf
 message attach chart.png notes.txt
 message send --message "I attached the report and supporting files."
 ```
+
+A document on a connected computer can be attached directly when that computer's daemon is current; older daemons can attach only images from that computer.
 
 Use `--mime` only when GSV cannot infer the type and only with one attachment. Attachment count and size limits are enforced before the message is committed.
 

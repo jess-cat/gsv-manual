@@ -35,6 +35,24 @@ Before changing it:
 
 Use keys discovered in the live configuration or named by a documented recovery procedure. Keep authentication material out of diagnostic output.
 
+## Keys Worth Knowing
+
+Configuration is a key/value store. System keys live under `config/` and are visible at `/sys/config/*`; a person's overrides live under `users/{uid}/` at `/sys/users/{uid}/*`. Only the `ai/`, `ui/`, and `locale/` prefixes can be overridden per person; server and shell keys are system-only.
+
+| Key | Purpose |
+| --- | --- |
+| `users/{uid}/ai/models`, `config/ai/models` | Ordered model entries, layered ahead of the deployment base |
+| `users/{uid}/ai/model_order` | The owner's fallback order across all layers, by stable id |
+| `users/{uid}/ai/preferred_model` | The entry an account or piece of work prefers |
+| `users/{uid}/ai/reasoning`, `config/ai/reasoning` | Reasoning mode hint, `off` to `xhigh` |
+| `users/{uid}/ai/tools/approval`, `config/ai/tools/approval` | Approval policy |
+| `config/ai/context.d/*.md` | System standing context, concatenated in name order |
+| `users/{uid}/locale/timezone` | The person's IANA timezone for schedules and context |
+| `config/server/name`, `config/server/timezone`, `config/server/version` | Installation name, default timezone, and read-only version |
+| `config/shell/timeout_ms`, `config/shell/network_enabled`, `config/shell/max_output_bytes` | Native shell limits |
+
+Read a key with `cat /sys/config/ai/reasoning` or `cat /sys/users/1000/ai/models`; write with a redirect to the same path. Credentials are stored beside an entry as `.../api_key` and are never returned by a list read.
+
 ## Session Problems
 
 If login succeeds but the UI immediately disconnects, inspect the actual connection error and session status. Browser manifest, analytics, content-blocker, and form warnings may be unrelated noise.

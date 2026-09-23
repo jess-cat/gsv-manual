@@ -12,9 +12,11 @@ The Desktop app can guide first-time setup:
 2. Choose a name for the computer.
 3. Confirm machine enrollment.
 4. Let Desktop install and start the background machine service.
-5. Verify that the computer appears online under Machines.
+5. Verify that the computer appears online under **Places** in Fleet.
 
-The background service keeps the machine connected when the Desktop window closes. Desktop sign-out and machine revocation remain separate actions.
+Without Desktop, choose **connect** beside Places in the Web app, name the computer, and run the `gsv pair` command it shows on that computer after installing GSV.
+
+The background service keeps the machine connected when the Desktop window closes. Desktop sign-out and machine revocation remain separate actions. The service updates itself when the installation moves ahead; new installs go to `~/.gsv/bin` and need no administrator rights.
 
 The CLI can inspect and control the same service. Run `gsv daemon --help` for the commands supported by the installed version.
 

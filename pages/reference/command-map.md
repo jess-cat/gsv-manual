@@ -19,6 +19,9 @@ This page maps common outcomes to the command family that owns them. Run `man <c
 | Use an MCP integration | `mcp` |
 | Connect or remove an OAuth account | `oauth` |
 | Search or maintain saved knowledge | `wiki` |
+| Search the web | `web search`, or the Search tool |
+| Track promises, follow-ups, and delegated work | `r12y` |
+| Connect with a person on another GSV | `contact` |
 | Find or maintain reusable procedures | `skills` |
 | Inspect or commit a GSV repository | `rgit` or `ripgit` |
 | Run a composed JavaScript workflow | `codemode` |
@@ -30,13 +33,16 @@ This page maps common outcomes to the command family that owns them. Run `man <c
 
 ## The Main Work Tools
 
-When GSV is handling a request, its compact work surface is Read, Write, Edit, Delete, Search, Shell, and CodeMode. These are the normal first choice:
+When GSV is handling a request, its compact work surface is eight tools: Read, Write, Edit, Delete, Search, Shell, CodeMode, and Send. These are the normal first choice:
 
-- Use Read, Write, Edit, Delete, and Search for direct file work.
+- Use Read, Write, Edit, Delete, and Search for direct file work and web search.
 - Use Shell for commands and the native command families above.
 - Use CodeMode when one operation must coordinate several typed calls or integrations.
+- Use Send to reply. Text alone sends and keeps working; text with `yield` sends and finishes the run; `yield` alone finishes quietly. Send is the run control and the only one of the eight that is not a capability.
 
-Choose the command that owns the action: `message` sends a message, `proc` manages work, `wiki` maintains saved knowledge, and `cp` copies across targets.
+Every capability tool also takes an optional `purpose`: one sentence written for the person, saying why the call is being made. It is shown in an approval prompt and recorded in the ledger, and it never reaches the underlying command.
+
+Choose the command that owns the action: Send replies, `proc` manages work, `wiki` maintains saved knowledge, and `cp` copies across targets. The Shell forms `message send` and `yield` remain the same actions as Send.
 
 ## Machine-Readable Output
 

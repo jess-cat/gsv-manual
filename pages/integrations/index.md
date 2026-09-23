@@ -2,7 +2,7 @@
 
 [Back to the manual](../../index.md)
 
-GSV can continue conversations through messaging apps, receive and send managed email, and use external services connected through MCP or OAuth. What is available depends on the installation and the accounts the user has linked.
+GSV can continue conversations through messaging apps, receive and send managed email, and use external services connected through MCP or OAuth. What is available depends on the installation and the accounts the user has linked. Messengers are connected under **Settings → messengers** and MCP servers under **Settings → mcp** in the Web app.
 
 ## Contacts
 
@@ -12,7 +12,7 @@ requests, and exact file revisions. See [Connect with another GSV](contacts.md).
 
 ## Messaging
 
-Private messages from a linked Telegram, WhatsApp, or Discord identity normally continue Ship. Groups, channels, and threads can be directed to selected work when authorized.
+Private messages from a linked Telegram, Slack, or Discord identity normally continue Ship. Groups, channels, and threads can be directed to selected work when authorized. WhatsApp is not currently available.
 
 Connecting a provider account and proving which external person is the signed-in GSV owner are separate steps. See [Connect and route messaging](adapters-routing.md).
 

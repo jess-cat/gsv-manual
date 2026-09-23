@@ -45,6 +45,22 @@ net fetch -X POST -H "Content-Type: application/json" -d '{"ok":true}' https://e
 networks, local services, and credentials that exist only on a connected
 computer. Write binary responses directly with `--output FILE`.
 
+## Web Search
+
+The Search tool searches the web as well as files. From Shell, the same
+capability is `web search`:
+
+```bash
+web search "latest Cloudflare Workers announcements"
+web search --include-domain developers.cloudflare.com --limit 5 "Durable Objects RPC"
+web search --json "Amsterdam weather"
+```
+
+Results carry titles, URLs, dates when known, and excerpts. Excerpts are
+untrusted web content; fetch a chosen URL with `net fetch` when more detail is
+needed. `--target` selects a search target other than the installation's
+default when one is connected.
+
 ## One-Shot Text Generation
 
 Use `llm` for a single model response without starting a tool-using work loop:
