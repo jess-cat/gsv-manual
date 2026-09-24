@@ -48,7 +48,7 @@ A policy is a default action plus ordered rules:
 - `target` scopes a rule: omit it for every target, `gsv` for the installation itself, `targets/*` for any connected computer or browser, or one target id.
 - The most specific target wins, then an exact match beats a wildcard, then list order.
 
-The default policy allows everything except `shell.exec`, `net.fetch`, `fs.delete`, `sys.mcp.call`, and `mail.send`, which ask. Mail is guarded separately: sending mail without asking needs an explicit `auto` rule for `mail.send`, even when the default is `auto`.
+The default policy lets native work in the installation itself run automatically: files, commands, and network requests on `gsv`, and web search anywhere. On a connected computer or browser it reads, searches, and transfers files automatically but asks before changing files, running a command, or making a network request. `sys.mcp.call` and `mail.send` ask everywhere. Mail is guarded separately: sending mail without asking needs an explicit `auto` rule for `mail.send`, even when the default is `auto`.
 
 Every call carries an optional purpose, one sentence written for the person. The approval prompt leads with it and the ledger records it, so a person can judge a request without reading the arguments.
 
