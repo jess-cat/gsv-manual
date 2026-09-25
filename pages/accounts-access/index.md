@@ -12,7 +12,7 @@ Accounts identify who is acting. Permissions decide which actions that identity 
 - A **machine identity** authenticates one connected computer.
 - A linked messaging identity proves that an external sender represents the signed-in owner.
 
-Onboarding creates one human owner. Invitations and multi-human administration are not yet available.
+Onboarding creates the first human, **root**. Root can invite further people into the space under **Settings → people**; each becomes an ordinary owner account with its own conversations, work, files, and approval policy. See [Passwords, sessions, tokens, and people](credentials-sharing.md).
 
 ## Inspect Identity
 

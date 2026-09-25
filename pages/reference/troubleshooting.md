@@ -24,8 +24,10 @@ Start with the failed outcome, then inspect the smallest owner of that outcome. 
 | A file cannot be read | target, path, permissions, exact revision, and size limits |
 | An integration tool is absent | `mcp status`, `mcp list`, OAuth status, and current capability |
 | A message is not delivered externally | linked destination, route, attachment limits, and provider result |
-| A model fails | selected profile, provider availability, allowance, context size, and cancellation |
+| A model fails | the model order in **Settings → preferences**, provider availability, allowance, context size, and cancellation |
 | An action is waiting | pending approval, active tool, target connection, or queued work |
+| An action was refused or asked for approval | the approval policy in **Settings → permissions**, and the ledger line's purpose and outcome |
+| Something ran that should not have | the ledger in **Fleet**, then the policy that allowed it |
 
 ## Preserve The Original Error
 

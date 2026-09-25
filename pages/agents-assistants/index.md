@@ -32,9 +32,11 @@ This separation keeps the conversation readable and the reasoning and tool use i
 
 | Goal | Action |
 | --- | --- |
-| See visible work | Open **Work** or run `proc list` |
-| Inspect the current work item | Run `proc self`, then `proc history --pid <pid>` |
-| Hand off a bounded subtask | `proc delegate --label LABEL --timeout DURATION TASK` |
+| See visible work | Open **Fleet → Processes** or run `proc list` |
+| Inspect the current work item | Run `proc self`, then `proc history --pid <pid>` (`--tail` for the newest) |
+| See every action taken and why | Open **Fleet → Ledger** |
+| Review open promises and follow-ups | Open **Fleet → Responsibilities** or run `r12y list` |
+| Hand off a bounded subtask | `proc delegate --label LABEL --check-after DURATION TASK` |
 | Stop only the active run | use **Abort** in the active client |
 | Clear activity but keep the work item | Reset / `proc reset --pid <pid>` |
 | Remove a work item | Kill / `proc kill <pid>` |
@@ -44,3 +46,4 @@ This separation keeps the conversation readable and the reasoning and tool use i
 
 - [Messages, work, and delegation](conversations-delegation.md)
 - [Identity, context, files, and approvals](identity-context-approvals.md)
+- [The ledger](ledger.md)

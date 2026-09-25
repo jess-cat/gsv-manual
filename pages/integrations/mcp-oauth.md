@@ -24,13 +24,17 @@ For a workflow involving several calls, use CodeMode or the server's generated C
 
 ## Add, Refresh, Or Remove MCP
 
+In the Web app, open **Settings → mcp** and choose **add MCP server**: a name, the server URL, a transport (automatic, streamable HTTP, or server-sent events), and any custom headers such as an API key. A server that uses OAuth shows **sign in** on its row afterwards. Each row offers **refresh** and **remove**; servers added by another account are read only.
+
+From Shell:
+
 ```bash
 mcp add <name> <url>
 mcp refresh <server>
 mcp remove <server>
 ```
 
-Run `mcp help` before changing a connection. Availability depends on the current identity, configuration, server health, capability, and approval policy.
+Run `mcp help` before changing a connection. Adding needs the `sys.mcp.add` capability, and calling a tool asks for approval under the default policy. Availability depends on the current identity, configuration, server health, capability, and approval policy.
 
 ## OAuth Accounts
 

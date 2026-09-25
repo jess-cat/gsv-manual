@@ -4,10 +4,10 @@
 
 ## Ship And Work
 
-Ship always opens the personal intelligence. Separate work opens in a visibly
+**Zen** always opens the personal intelligence. Separate work opens in a visibly
 labelled Work session with a Back action, while Ship remains available.
 
-Use the Work view when you want to:
+Use the **Processes** block in **Fleet** when you want to:
 
 - see which tasks are active, waiting, finished, or failed;
 - inspect reasoning, tool calls, approvals, and errors;
@@ -17,16 +17,27 @@ Use the Work view when you want to:
 See [Messages, work, and delegation](../agents-assistants/conversations-delegation.md)
 for the difference between sent messages and work activity.
 
-## Files, Terminal, And Repositories
+## Fleet
 
-- **Files** browses and edits files on an authorized target.
-- **Terminal** runs commands on the selected target.
-- **Repositories** shows repositories, history, diffs, and changes.
-- **Machines** shows connected computers and their state.
+Fleet is the operational view:
+
+- **Places** shows connected computers and browsers and their state; **connect** pairs a new one.
+- **Processes** shows running and finished work with its controls.
+- **Contacts** shows people on other GSVs; **add contact** starts a pairing.
+- **Responsibilities** shows promises, follow-ups, and delegated work Ship is tracking.
+- **Ledger** shows every action taken on the installation, with its purpose and outcome.
+- **Files** shows recently touched files across places.
 
 Check the selected target before changing a file or running a command. A path
 such as `laptop:/projects/report` acts on that connected target; an unqualified
 path uses the current target and working directory.
+
+## Browser Extension
+
+**Your GSV** is the browser extension that makes a browser a place. In Fleet,
+choose **connect** beside Places and pick **Browser**, then load the extension
+and paste the invitation into it. Once it says **Ready**, the browser appears
+under Places and as a target.
 
 ## Attachments
 

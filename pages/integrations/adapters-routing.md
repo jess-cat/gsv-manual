@@ -18,11 +18,13 @@ The exact setup depends on the installation:
 
 The message used to create the link may be consumed by setup. Send another message after confirmation to begin the conversation.
 
+## Slack
+
+Connect a Slack app to the workspace through **Settings → messengers**; the operator's shared app, when the installation offers one, needs no app of your own. Then link your Slack identity with the one-time challenge while signed in to GSV. Direct messages to the app reach Ship; channels and threads keep explicit routes. Files shared in Slack become GSV files tied to exact revisions, and GSV can share files back into the conversation.
+
 ## WhatsApp
 
-First pair the GSV WhatsApp account as a linked device through the Messengers setup. Then message it from the person's own WhatsApp account and confirm the separate identity-link challenge inside GSV.
-
-Pairing the device and linking the human sender are different operations.
+WhatsApp is not currently available. The earlier unofficial adapter was removed; a WhatsApp Business connection is separate future work. If a person asks for it, say so rather than attempting a pairing.
 
 ## Discord
 
@@ -51,17 +53,17 @@ Groups, channels, and threads keep explicit routes. Choose their GSV destination
 
 Incoming images, voice messages, video, and documents become files tied to exact revisions. Transcription may accompany audio, but the original audio remains available.
 
-Outgoing attachments are resolved only when they are sent:
+Outgoing attachments are resolved only when they are sent. The Send tool attaches files staged for the reply; from Shell:
 
 ```bash
 message send --to DESTINATION --message "Here it is" --attach /path/to/file --also
 ```
 
-This works for managed and standalone messaging paths when the selected adapter supports that media type.
+This works on every messaging path when the selected adapter supports that media type. Attaching a document from a connected computer needs that computer's daemon to be current; older daemons can attach only images.
 
 ## Delivery And Retries
 
-GSV gives each logical inbound and outbound delivery a stable identity. Provider retries reuse that identity. When provider acceptance is uncertain, the delivery remains ambiguous under the same identity for status checks or a safe retry.
+GSV gives each logical inbound and outbound delivery a stable identity. Each destination receives exactly one correlated send request; GSV owns the durable retry, and the adapter owns provider presentation and idempotency. When provider acceptance is uncertain, the delivery remains ambiguous under the same identity for status checks or a safe retry. Inspect one with `message delivery show <delivery-id>`.
 
 For a direct reply, the endpoint that started the interaction wins. Background Ship events may use the most recently authorized linked private destination.
 

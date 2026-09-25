@@ -7,9 +7,12 @@ work, files, machines, integrations, and permissions.
 
 ## Choose The App That Fits
 
-Use **Web** when you want GSV from any signed-in browser. It includes Ship,
-Work, Messages, Files, Terminal, Repositories, Machines, Messengers,
-Integrations, Settings, and administration.
+Use **Web** when you want GSV from any signed-in browser. The Web app is
+called **Instrument** and has four views: **Zen** for Ship and the activity
+behind each reply, **Fleet** for places, processes, contacts,
+responsibilities, the ledger, and recent files, **Memory** for personal
+knowledge pages, and **Settings** for preferences, permissions, instructions,
+messengers, MCP, and (for root) sign-in and people.
 
 Use **Desktop** when you want a native window, local voice and gesture control,
 or automatic setup of the current computer as a connected machine. Desktop can

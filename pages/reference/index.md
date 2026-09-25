@@ -51,6 +51,7 @@ mcp search "query"          # tools across those services
 oauth list                   # connected provider accounts
 wiki list                    # available knowledge collections
 proc list                    # visible work
+r12y list                    # open responsibilities
 message destinations --all  # places messages may be sent
 ```
 

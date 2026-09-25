@@ -38,7 +38,9 @@ A file reference identifies content; it is not permission to read it. Access is 
 
 A capability says which class of operation an identity may request. File ownership, target access, route ownership, and current state may add narrower checks.
 
-Approval rules can automatically allow, deny, or ask about an action. Shell commands, destructive file changes, external integrations, remote computers, privileged operations, or network calls may require confirmation.
+Approval rules can automatically allow, deny, or ask about an action. Shell commands, destructive file changes, external integrations, remote computers, privileged operations, or network calls may require confirmation. The rules live in the approval policy, edited under **Settings → permissions**; see [Models and approvals](../settings/ai-voice-approvals.md#tool-approval).
+
+Every tool call carries an optional purpose: one sentence for the person saying why. Write it so the person can decide from the prompt alone; it is recorded in the ledger with the outcome.
 
 An approval is bound to one exact request. Its request token, sender, and active state must all match.
 

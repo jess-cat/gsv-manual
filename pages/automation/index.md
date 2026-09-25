@@ -11,7 +11,7 @@ Use automation when something should happen later or repeat. Use delegation when
 | Ask GSV to think or act later | `sched add --here` |
 | Send fixed text later without a model run | `sched add --to` |
 | Run a recurring shell command | `crontab` |
-| Hand off a bounded task and receive its result | `proc delegate` |
+| Hand off a bounded task and receive its result | `proc delegate --check-after` |
 | Keep independent work with its own history and controls | a separate Work item |
 
 ## Before Creating Automation

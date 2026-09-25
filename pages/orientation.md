@@ -17,6 +17,8 @@ Models and specialized agents can contribute to the work. GSV is the continuing 
 
 Ship names your continuing relationship with the personal intelligence. The Web app, Desktop app, and linked private messengers all open that same Ship.
 
+The Web app is called **Instrument**. It has four views: **Zen** is Ship and the activity behind each reply; **Fleet** lists your places, processes, contacts, responsibilities, the ledger, and recent files; **Memory** shows your personal knowledge pages; **Settings** holds preferences, permissions, instructions, messengers, and MCP connections.
+
 GSV may do work in separate work sessions, but results return through the same personal intelligence unless you deliberately open a direct work session.
 
 ## Messages And Activity
@@ -30,7 +32,7 @@ Use Messages for the conversation. Open a work item's Activity when you want to 
 
 ## Work You Can See And Control
 
-GSV can hand off parts of a request or keep longer tasks separate so Ship remains responsive. The Work area shows those tasks and lets you inspect, reset, stop, or open one directly.
+GSV can hand off parts of a request or keep longer tasks separate so Ship remains responsive. The **Processes** block in Fleet shows those tasks and lets you inspect, reset, stop, or open one directly.
 
 Sent messages remain in the conversation when work stops. Returning to Ship leaves other work running; Abort, Reset, and Kill provide explicit lifecycle controls.
 

@@ -4,16 +4,13 @@
 
 ## What Becomes A Message
 
-Reasoning and draft text belong to activity. A user-visible reply is sent only when the active GSV intelligence deliberately finishes with:
+Reasoning and draft text belong to activity. A user-visible reply is sent only when the active GSV intelligence deliberately sends it with the Send tool: text alone sends the message and keeps working; text with `yield` sends it and finishes the run; `yield` alone finishes quietly, with no message. Several sends in one run each deliver exactly once, so progress messages are ordinary.
+
+The Shell forms are the same actions:
 
 ```bash
 message send --message "text for the user"
-```
-
-If no reply should be sent:
-
-```bash
-message silence --reason "why no message is needed"
+yield
 ```
 
 Files can be attached before completion:
@@ -25,7 +22,7 @@ message send --message "Here it is."
 
 Use `message current --json` to inspect the endpoint for the current interaction. Use `message destinations --all --json` when sending a separate message to another authorized destination.
 
-If a human-facing run ends without sending or silencing, GSV asks it once to choose. A second omission ends with an error visible in activity.
+If a human-facing run ends in text without sending, GSV asks it to use Send, for up to three rounds. If that still fails, the person receives "I wrote a reply but did not send it. Ask me again." instead of silence.
 
 ## One Conversation, Separate Work
 
@@ -38,10 +35,12 @@ Ship is the main conversation. A Work Session is a temporary direct conversation
 Use delegation when an active request needs investigation, several steps, waiting, or parallel work:
 
 ```bash
-proc delegate --label research --timeout 5m "Find the answer and return the evidence."
+proc delegate --label research --check-after 10m "Find the answer and return the evidence."
 ```
 
-The delegated task gets its own activity. Its ordinary final answer returns directly to the caller; it does not need to send or silence a human message. The caller evaluates that result and then sends a useful answer or remains silent.
+The delegated task gets its own activity. Its ordinary final answer returns directly to the caller; it does not need to send a human message. The caller evaluates that result and then sends a useful answer or yields quietly.
+
+Delegated work is supervised rather than killed on a timer: at each `--check-after` checkpoint (default 10 minutes) the caller is told the child is still running and can intervene. `--timeout` is accepted as an alias for `--check-after` and no longer kills the child.
 
 Useful commands:
 
@@ -69,6 +68,10 @@ Only the active run can modify its state. If an older result arrives after the c
 - **Kill** permanently removes that work item after cleanup.
 
 None of these actions deletes already committed conversation messages.
+
+## Responsibilities
+
+Promises, follow-ups, delegated work, and recovery that must survive a run are recorded as responsibilities. Ship sees the whole list; a delegated child sees only its own assignments. Review them in **Fleet → Responsibilities** or with `r12y list`, and inspect one with `r12y show ID`. An incoming Contact message or a delegated result arrives as a responsibility with the exact reply command.
 
 ## Retention
 
